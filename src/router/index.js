@@ -1,20 +1,61 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/admin/login'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/admin/login',
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/admin/audiences',
+    name: 'audiences',
+    component: () => import('../views/AudiencesView.vue')
+  },
+  {
+    path: '/admin/audiences/add',
+    name: 'add',
+    component: () => import('../views/AddAudience.vue')
+  },
+  {
+    path: '/admin/campaigns',
+    name: 'campaigns',
+    component: () => import('../views/CampaignsView.vue')
+  },
+  {
+    path: '/admin/campaigns/add',
+    name: 'campaign-add',
+    component: () => import('../views/AddCampaign.vue')
+  },
+  {
+    path: '/admin/campaigns/edit/:id',
+    name: 'edit-campaign',
+    component: () => import('../views/EditCampaign.vue')
+  },
+  {
+    path: '/admin/campaigns/test/:id',
+    name: 'test-campaign',
+    component: () => import('../views/TestCampaign.vue')
+  },
+  {
+    path: '/admin/campaigns/send/:id',
+    name: 'send-campaign',
+    component: () => import('../views/SendCampaign.vue')
+  },
+  {
+    path: '/admin/campaigns/status/:id',
+    name: 'status',
+    component: () => import('../views/changeStatus.vue')
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: () => import('../views/logOut.vue')
   }
+  
 ]
 
 const router = createRouter({

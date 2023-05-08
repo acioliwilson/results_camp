@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <router-view />
 </template>
 
+<script>
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-nav {
-  padding: 30px;
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 5px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  font-family: 'Poppins', sans-serif !important;
+  color: #464646 !important;
+  box-sizing: border-box !important;
+}
+.router-link-exact-active {
+  font-weight: 500;
 }
 </style>
